@@ -1,5 +1,5 @@
 # M5Stack-Sonoff-Power-Display
-A display for Sonoff-Tasmoa POW 2. To show voltage, vurrent watt and energy values.
+A display for Sonoff-Tasmota POW R2 to show voltage, current, power and energy values.
 It includes also an alarm function to create an alarm tone in case of power loss.
 
 ![Display1](https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/blob/master/IMG_1278.JPG)
