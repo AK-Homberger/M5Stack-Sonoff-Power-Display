@@ -17,7 +17,7 @@ The M5Stack acts as a WLAN AccessPoint. Set the ssid and password to your preffe
 The Sonoff device connects as wifi client to the M5Stack. The M5Stack receives the power data from Sonoff device via JSON. 
 Normally clients get the IP address via DHCP. But it is more reliable to set the Sonoff device to a fixed IP address (192.168.4.100).
 
-To change the IP address you have to access the M5Stack Access Point with a phone/tablet and access the Sonoff device via 192.168.4.2. Make sure that the Sonoff device connects first and then the phone/tablet. Otherwise the the IP adresses assigend via DHCP might be different. Just try 192.168.4.2, 192.168.4.3, 192.168.4.4.
+To change the IP address you have to access the M5Stack Access Point with a phone/tablet and access the Sonoff device via 192.168.4.2. Make sure that the Sonoff device connects first and then the phone/tablet. Otherwise the IP adresses assigend via DHCP might be different. Just try 192.168.4.2, 192.168.4.3, 192.168.4.4.
 
 When connected to the Tasmota configuration page, open the console and put in the following commands:
 
