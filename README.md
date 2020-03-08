@@ -25,7 +25,7 @@ When connected to Tasmota configuration page, open the console and put in the fo
 - PowerOnState 1
 - WattRes 1
 
-Then restart the Sonoff device. It should connect now to M5Stack and power values should be shown on the device.
+Then restart the Sonoff device. It should connect now to the M5Stack and power values should be shown on the device.
 "PowerOnState 1" means that the relay of the Sonoff POW is always on after restart. "WattRes 1" means one digit resolution for power value.
 
 You can use the three buttons on the M5Stack for:
