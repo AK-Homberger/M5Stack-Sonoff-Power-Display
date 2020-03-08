@@ -14,7 +14,7 @@ The M5Stack requires standard installation of the M5Stack libraries. In addition
 
 The M5Stack acts as a WLAN AccessPoint. Set the ssid and password to your preffered values. The same values have to be used in the configuration web page of the Sonoff POW R2 device.
 
-The Sonoff device connects as wifi client then to the M5Stack. The M5Stack receives the power data from Sonoff device via JSON. 
+The Sonoff device connects as wifi client to the M5Stack. The M5Stack receives the power data from Sonoff device via JSON. 
 Normally clients get the IP address via DHCP. But it is more reliable to set the Sonoff device to a fixed IP address (192.168.4.100).
 
 To change the IP address you have to access the M5Stack Access Point with a phone/tablet and access the Sonoff device via 192.168.4.2. Make sure that the Sonoff device connects first and then the phone/tablet. Otherwise the the IP adresses assigend via DHCP might be different. Just try 192.168.4.2, 192.168.4.3, 192.168.4.4.
@@ -34,7 +34,6 @@ You can use the three buttons on the M5Stack for:
 - Button B: To reset the energy (in kWh) to zero.
 - Button C: To set the dimm level of the LCD screen.
 
-The valus for alarmstae/dimm level are stored in nonvolatile memory in the M5Stack.
+The values for alarmstate/dimm level are stored in nonvolatile memory in the M5Stack.
 If the M5Stack can't connect to a Sonoff POW device it will restart after 10 tries. 
-
 
