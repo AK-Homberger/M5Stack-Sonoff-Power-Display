@@ -19,7 +19,7 @@ Normally clients get the IP address via DHCP. But it is more reliable to set the
 
 To change the IP address you have to access the M5Stack Access Point with a phone/tablet and access the Sonoff device via 192.168.4.2. Make sure that the Sonoff device connects first and then the phone/tablet. Otherwise the the IP adresses assigend via DHCP might be different. Just try 192.168.4.2, 192.168.4.3, 192.168.4.4.
 
-When connected to Tasmota configuration page, open the console and put in the following commands:
+When connected to the Tasmota configuration page, open the console and put in the following commands:
 
 - IPAddress 192.168.4.100
 - PowerOnState 1
