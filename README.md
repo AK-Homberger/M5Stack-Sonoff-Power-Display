@@ -34,6 +34,6 @@ You can use the three buttons on the M5Stack for:
 - Button B: To reset the energy (in kWh) to zero.
 - Button C: To set the dimm level of the LCD screen.
 
-The values for alarm state/dimm level are stored in nonvolatile memory in the M5Stack.
+The values for alarm state/dimm level are stored in nonvolatile memory in the M5Stack and reloaded after restart.
 If the M5Stack can't connect to a Sonoff POW device it will restart after 10 tries. 
 
