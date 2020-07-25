@@ -1,7 +1,7 @@
 /*
   Sonoff POW R2 -> M5Stack display
   Reads JSON Data from Sonoff POW R2 and displays is on the M5Stack module
-  Version 0.1 / 06.03.2021
+  Version 0.2 / 25.07.2020
 */
 
 #include <M5Stack.h>
@@ -35,7 +35,7 @@ tPower Power;
 void setup() {
   M5.begin();
   M5.Power.begin();
-  
+
   Power.Total = 0.003;                // Power on Sonoff starts with this value. Why?
   Serial.begin(115200); delay(100);
 
@@ -61,16 +61,21 @@ void setup() {
     "Task1", /* Name of the task */
     10000,  /* Stack size in words */
     NULL,  /* Task input parameter */
-    2,  /* Priority of the task */
+    0,  /* Priority of the task */
     &Task1,  /* Task handle. */
     0); /* Core where the task should run */
 }
 
+unsigned long update_time = 0;
+
 void Get_JSON_DataTask(void * parameter) {    // Get JSON data endlessly
 
   while (true) {
-    Get_JSON_Data();
-    delay(1000);
+
+    if (millis() > update_time + 1000) {
+      Get_JSON_Data();
+      update_time = millis();
+    }
   }
 }
 
@@ -80,7 +85,7 @@ void Get_JSON_Data() {   // Read Energy Data from Sonoff POW
 
   // Allocate JsonBuffer
   // Use arduinojson.org/assistant to compute the capacity.
-  StaticJsonBuffer<1000> jsonBuffer ;
+  StaticJsonDocument<1000> root;
 
   WiFiClient client;
   client.setTimeout(500);
@@ -97,9 +102,9 @@ void Get_JSON_Data() {   // Read Energy Data from Sonoff POW
     connection++;
     return;
   }
-  
-  connection=0;
-   
+
+  connection = 0;
+
   // Send HTTP request
   client.println(F("GET /cm?cmnd=status%208 HTTP/1.0"));
   client.println(F("Host: arduinojson.org"));
@@ -126,12 +131,14 @@ void Get_JSON_Data() {   // Read Energy Data from Sonoff POW
   }
 
   // Parse JSON object
-  JsonObject& root = jsonBuffer.parseObject(client);
-  if (!root.success()) {
+
+  DeserializationError error = deserializeJson(root, client);
+
+  if (error) {
     Serial.println(F("Parsing failed!"));
     return;
   }
-
+    
   Serial.println(F("Parsing sucess!"));
   update = true;
   // Extract values
@@ -199,13 +206,13 @@ void DiplayAlarmState(void) {
   M5.Lcd.fillRect(265, 0, 320, 30, 0x1E9F);
 
   M5.Lcd.setCursor(265, 7);
-  if (connection>0) M5.Lcd.printf("C:%1.0d", connection); else  M5.Lcd.printf("    ");
-  
+  if (connection > 0) M5.Lcd.printf("C:%1.0d", connection); else  M5.Lcd.printf("    ");
+
   M5.Lcd.fillRect(0, 210, 320, 30, 0x1E9F);
   M5.Lcd.setCursor(10, 218);
   if (alarmstate) M5.Lcd.print("Alarm=On  "); else M5.Lcd.print("Alarm=Off ");
   M5.Lcd.setCursor(225, 218);
-  M5.Lcd.printf("Dim=%3.0d ", LCD_Brightness);  
+  M5.Lcd.printf("Dim=%3.0d ", LCD_Brightness);
 }
 
 
@@ -232,7 +239,7 @@ void Display_Main (void)
 
 void loop() {
   M5.update();
-    
+
   if (update == true && connection > 1 && alarmstate == true) {  // Power off alarm
     M5.Speaker.tone(661, 500);
   }
@@ -264,7 +271,7 @@ void loop() {
   if (M5.BtnC.wasPressed() == true)                         /* Button C pressed ? --> Change brightness */
   {
     M5.Speaker.tone(600, 10);
-    
+
     if (LCD_Brightness < 250)                               /* Maximum brightness not reached ? */
     {
       LCD_Brightness = LCD_Brightness + 10;                 /* Increase brightness */
@@ -275,7 +282,7 @@ void loop() {
     }
     M5.Lcd.setBrightness(LCD_Brightness);                   /* Change brightness value */
 
-    preferences.begin("nvs", false);                        
+    preferences.begin("nvs", false);
     preferences.putInt("LCD_State", LCD_Brightness);
     preferences.end();
     update = true;
