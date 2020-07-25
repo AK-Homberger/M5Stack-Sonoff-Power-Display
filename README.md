@@ -10,7 +10,7 @@ To use the program on the M5Stack you have to install a Sonoff POW R2 device on 
 
 The Tasmota firmware have to be flashed on the device (I'm using version 7.2). The flashing procedure is detailled here: https://www.tasmota.info/sonoff-pow-r2-flash/ and here: https://github.com/arendst/Tasmota/wiki/sonoff-pow-r2
 
-The M5Stack requires standard installation of the M5Stack libraries. In addition the "ArduinoJson" library has to be installed.
+The M5Stack requires standard installation of the M5Stack libraries. In addition the "ArduinoJson" library has to be installed (from now on version 6.x.x is supported).
 
 The M5Stack acts as a WLAN AccessPoint. Set the ssid and password to your preffered values. The same values have to be used in the configuration web page of the Sonoff POW R2 device.
 
@@ -37,3 +37,5 @@ You can use the three buttons on the M5Stack for:
 The values for alarm state/dimm level are stored in nonvolatile memory in the M5Stack and reloaded after restart.
 If the M5Stack can't connect to a Sonoff POW device it will restart after 10 tries. 
 
+#Updates
+25.07.2020, Version 0.2: Moved to new ArduinoJSON library (version 6.x.x).
