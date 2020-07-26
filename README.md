@@ -37,5 +37,12 @@ You can use the three buttons on the M5Stack for:
 The values for alarm state/dimm level are stored in nonvolatile memory in the M5Stack and reloaded after restart.
 If the M5Stack can't connect to a Sonoff POW device it will restart after 10 tries. 
 
+# Alternative Display
+The M5Stack might be a bit oversized to act only as a display. 
+Therfore ther is also an alternative solution with an ESP8266 (e.g. Wemod D1 mini) and a cheap SSD1306 OLED display.
+
+https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/tree/master/ESP8266Power_OLED
+
+
 # Updates
 25.07.2020, Version 0.2: Moved to new ArduinoJSON library (version 6.x.x).
