@@ -1,4 +1,4 @@
-# M5Stack-Sonoff-Power-Display
+# M5Stack Sonoff Power Display
 A display for Sonoff-Tasmota POW R2 to show voltage, current, power and energy values.
 It includes also an alarm function to create an alarm tone in case of power loss.
 
