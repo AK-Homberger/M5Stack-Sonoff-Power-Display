@@ -39,7 +39,7 @@ If the M5Stack can't connect to a Sonoff POW device it will restart after 10 tri
 
 # Alternative Display
 The M5Stack might be a bit oversized to act only as a display. 
-Therfore there is also an alternative solution with an ESP8266 (Wemos D1 mini) and a cheap SSD1306 OLED display:
+Therfore there is also an alternative solution with an ESP8266 (D1 mini) and a cheap SSD1306 OLED display:
 https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/tree/master/ESP8266Power_OLED
 
 A nice housing for the display can be found on Thingiverse: http://www.thingiverse.com/thing:3080488
