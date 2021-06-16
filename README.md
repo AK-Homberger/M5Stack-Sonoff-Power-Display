@@ -8,7 +8,7 @@ It includes also an alarm function to create an alarm tone in case of power loss
 
 To use the program on the M5Stack you have to install a Sonoff POW R2 device on the boat external power connection.
 
-The Tasmota firmware have to be flashed on the device (I'm using version 7.2). The flashing procedure is detailled here: https://www.tasmota.info/sonoff-pow-r2-flash/ and here: https://github.com/arendst/Tasmota/wiki/sonoff-pow-r2
+The Tasmota firmware have to be flashed on the device (I'm using version 7.2). The flashing procedure is detailled here: https://tasmota.github.io/docs/devices/Sonoff-Pow-R2/ and here: https://github.com/arendst/Tasmota/wiki/sonoff-pow-r2
 
 The M5Stack requires standard installation of the M5Stack libraries. In addition the "ArduinoJson" library has to be installed (from now on version 6.x.x is supported).
 
