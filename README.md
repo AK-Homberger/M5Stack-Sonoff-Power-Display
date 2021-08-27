@@ -54,6 +54,7 @@ The cabling for the SSD1806 OLED display requires four connections.
 |SCL     |  GPIO 5 (D1) |
 |SDA     |  GPIO 4 (D2) |
 
+An optional buzzer can be connected to GPIO 12.
 
 A nice housing for the display can be found on Thingiverse: http://www.thingiverse.com/thing:3080488
 
