@@ -1,4 +1,4 @@
-# M5Stack Sonoff Power Display
+# M5Stack or ESP8266 Sonoff Power Display
 A display for Sonoff-Tasmota POW R2 to show voltage, current, power and energy values.
 It includes also an alarm function to create an alarm tone in case of power loss.
 
@@ -9,14 +9,13 @@ It includes also an alarm function to create an alarm tone in case of power loss
 ![Display2](https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/blob/master/pow-r2-04_2.jpg)
 
 
-
-To use the program on the M5Stack you have to install a Sonoff POW R2 device on the boat external power connection.
+You can either use the program on the M5Stack or on an ESP3266 with an OLED diplay. And you have to install a Sonoff POW R2 device on the boat external power connection.
 
 The Tasmota firmware have to be flashed on the device (I'm using version 7.2). The flashing procedure is detailled here: https://tasmota.github.io/docs/devices/Sonoff-Pow-R2/ and here: https://github.com/arendst/Tasmota/wiki/sonoff-pow-r2
 
-The M5Stack requires standard installation of the M5Stack libraries. In addition the "ArduinoJson" library has to be installed (from now on version 6.x.x is supported).
+The M5Stack requires standard installation of the M5Stack libraries. In addition the "ArduinoJson" library has to be installed (from now on version 6.x.x is supported). For the ESP8266 you also have to intall the Adafruit SSD1306 library.
 
-The M5Stack acts as a WLAN AccessPoint. Set the ssid and password to your preffered values. The same values have to be used in the configuration web page of the Sonoff POW R2 device.
+The M5Stack/ESP8266 acts as a WLAN AccessPoint. Set the ssid and password to your preffered values. The same values have to be used in the configuration web page of the Sonoff POW R2 device.
 
 The Sonoff device connects as wifi client to the M5Stack. The M5Stack receives the power data from Sonoff device via JSON. 
 Normally clients get the IP address via DHCP. But it is more reliable to set the Sonoff device to a fixed IP address (192.168.4.100).
