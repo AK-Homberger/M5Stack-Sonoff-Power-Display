@@ -4,7 +4,11 @@ It includes also an alarm function to create an alarm tone in case of power loss
 
 ![Display1](https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/blob/master/IMG_1278.JPG)
 
+![ESP8266](https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/blob/master/IMG_1475.JPG)
+
 ![Display2](https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/blob/master/pow-r2-04_2.jpg)
+
+
 
 To use the program on the M5Stack you have to install a Sonoff POW R2 device on the boat external power connection.
 
