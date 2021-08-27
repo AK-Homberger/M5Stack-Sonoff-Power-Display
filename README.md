@@ -47,12 +47,14 @@ https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/tree/master/ESP8266
 
 The cabling for the SSD1806 OLED display requires four connections.
 
+-------------------------
 |SSD1306 |  ESP8266**   |
 -------------------------
 |Vin     |  3.3V        |
 |GND     |  GND         |
 |SCL     |  GPIO 5 (D1) |
 |SDA     |  GPIO 4 (D2) |
+-------------------------
 
 A nice housing for the display can be found on Thingiverse: http://www.thingiverse.com/thing:3080488
 
