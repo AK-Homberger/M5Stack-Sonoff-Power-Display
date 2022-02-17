@@ -9,7 +9,7 @@ It includes also an alarm function to create an alarm tone in case of power loss
 ![Display2](https://github.com/AK-Homberger/M5Stack-Sonoff-Power-Display/blob/master/pow-r2-04_2.jpg)
 
 
-You can either use the program on the M5Stack or on an ESP3266 with an OLED diplay. And you have to install a Sonoff POW R2 device on the boat external power connection.
+You can either use the program on the M5Stack or on an ESP8266 with an OLED diplay. And you have to install a Sonoff POW R2 device on the boat external power connection.
 
 The Tasmota firmware have to be flashed on the device (I'm using version 7.2). The flashing procedure is detailled here: https://tasmota.github.io/docs/devices/Sonoff-Pow-R2/ and here: https://github.com/arendst/Tasmota/wiki/sonoff-pow-r2
 
